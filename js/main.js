@@ -57,4 +57,36 @@ $(document).ready(function(){
         `;
         $("#posts").append(post);
     });
+
+    // Selector de tema
+    var theme = $("#theme");
+    // Localstorage
+    if(localStorage.getItem('tema') == null || localStorage.getItem('tema') == 'css/green.css'){
+        localStorage.getItem('tema', 'css/green.css');
+        theme.attr("href", "css/green.css");
+    }
+    else if(localStorage.getItem('tema') == 'css/red.css'){
+        localStorage.getItem('tema', 'css/red.css');
+        theme.attr("href", "css/red.css");
+    }
+    else if(localStorage.getItem('tema') == 'css/blue.css'){
+        localStorage.getItem('tema', 'css/blue.css');
+        theme.attr("href", "css/blue.css");
+    }
+
+    $("#to-green").click(function(){        
+        theme.attr("href", "css/green.css");
+        localStorage.setItem('tema', 'css/green.css');
+    });
+
+    $("#to-red").click(function(){
+        theme.attr("href", "css/red.css");
+        localStorage.setItem('tema', 'css/red.css');        
+    });
+
+    $("#to-blue").click(function(){
+        theme.attr("href", "css/blue.css");
+        localStorage.setItem('tema', 'css/blue.css');        
+    });
+
 });
